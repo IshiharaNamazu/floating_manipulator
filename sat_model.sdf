@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="three_link_model">
+    <static>false</static>
+
+    <!-- Link 0: 50kg cube -->
+    <link name="link0">
+      <pose>0 0 0.25 0 0 0</pose>
+      <inertial>
+        <mass>50</mass>
+        <inertia>
+          <ixx>2.08</ixx>
+          <iyy>2.08</iyy>
+          <izz>2.08</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Link 1: 2kg, 0.5m long -->
+    <link name="link1">
+      <pose>0 0 0.75 0 0 0</pose>
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.042</ixx>
+          <iyy>0.042</iyy>
+          <izz>0.00083</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.5</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Link 2: 2kg, 0.5m long -->
+    <link name="link2">
+      <pose>0 0 1.25 0 0 0</pose>
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.042</ixx>
+          <iyy>0.042</iyy>
+          <izz>0.00083</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.5</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Revolute joint between link0 and link1 -->
+    <joint name="joint0" type="revolute">
+      <pose>0 0 -0.25 -1.5707 0 0</pose> <!-- at top of link0 -->
+      <parent>link0</parent>
+      <child>link1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1.0</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <!-- Revolute joint between link1 and link2 -->
+    <joint name="joint1" type="revolute">
+      <pose>0 0 -0.25 0 0 0</pose> <!-- at top of link1 -->
+      <parent>link1</parent>
+      <child>link2</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1.0</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <plugin
+      filename="gz-sim-joint-controller-system"
+      name="gz::sim::systems::JointController">
+      <joint_name>joint0</joint_name>
+      <topic>/sat_model/joint0</topic>
+      <!--<initial_velocity>1.0</initial_velocity>-->
+    </plugin>
+    <plugin
+      filename="gz-sim-joint-controller-system"
+      name="gz::sim::systems::JointController">
+      <joint_name>joint1</joint_name>
+      <topic>/sat_model/joint1</topic>
+      <!--<initial_velocity>1.0</initial_velocity>-->
+    </plugin>
+  </model>
+</sdf>

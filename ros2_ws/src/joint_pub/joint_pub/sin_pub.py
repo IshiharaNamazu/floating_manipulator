@@ -12,8 +12,8 @@ class SineWavePublisher(Node):
         super().__init__('sine_wave_publisher')
 
         # パラメータの宣言と取得
-        self.declare_parameter('freq0', 0.3)  # /topic0 の正弦波の周波数 (Hz)
-        self.declare_parameter('freq1', 0.2)  # /topic1 の正弦波の周波数 (Hz)
+        self.declare_parameter('freq0', 0.37)  # /topic0 の正弦波の周波数 (Hz)
+        self.declare_parameter('freq1', 0.23)  # /topic1 の正弦波の周波数 (Hz)
         self.declare_parameter('publish_rate0', 100.0) # /topic0 のパブリッシュレート (Hz)
         self.declare_parameter('publish_rate1', 100.0) # /topic1 のパブリッシュレート (Hz)
 
@@ -43,7 +43,7 @@ class SineWavePublisher(Node):
         """
         msg = Float64()
         elapsed_time = time.time() - self.start_time_
-        msg.data = math.sin(2 * math.pi * self.freq0_ * elapsed_time)
+        msg.data = math.cos(2 * math.pi * self.freq0_ * elapsed_time)
         self.publisher0_.publish(msg)
 
     def timer1_callback(self):
@@ -52,7 +52,7 @@ class SineWavePublisher(Node):
         """
         msg = Float64()
         elapsed_time = time.time() - self.start_time_
-        msg.data = math.sin(2 * math.pi * self.freq1_ * elapsed_time)
+        msg.data = math.cos(2 * math.pi * self.freq1_ * elapsed_time)
         self.publisher1_.publish(msg)
 
 

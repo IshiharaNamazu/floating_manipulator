@@ -39,11 +39,11 @@
       <pose>0 0 1.875 0 0 0</pose>
       <inertial>
         <!--  ******************mass -->
-        <mass>5</mass>
+        <mass>5.0</mass>
         <!--  ******************inertia -->
         <inertia>
-          <ixx>0.292</ixx>
-          <iyy>0.292</iyy>
+          <ixx>0.0292</ixx>
+          <iyy>0.0292</iyy>
           <izz>0.00625</izz>
         </inertia>
       </inertial>
@@ -75,12 +75,12 @@
       <pose>0 0 3.25 0 0 0</pose>
       <inertial>
         <!--  ******************mass -->
-        <mass>50</mass>
+        <mass>50.0</mass>
         <!--  ******************inertia -->
         <inertia>
           <ixx>26.1</ixx>
           <iyy>26.1</iyy>
-          <izz>0.00625</izz>
+          <izz>0.0625</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -147,12 +147,12 @@
       <pose>0 0 7.25 0 0 0</pose>
       <inertial>
         <!--  ******************mass -->
-        <mass>50</mass>
+        <mass>10</mass>
         <!--  ******************inertia -->
         <inertia>
-          <ixx>26.1</ixx>
-          <iyy>26.1</iyy>
-          <izz>0.00625</izz>
+          <ixx>0.215</ixx>
+          <iyy>0.215</iyy>
+          <izz>0.0125</izz>
         </inertia>
       </inertial>
       <collision name="collision">
@@ -183,11 +183,11 @@
       <pose>0 0 7.625 0 0 0</pose>
       <inertial>
         <!--  ******************mass -->
-        <mass>50</mass>
+        <mass>5</mass>
         <!--  ******************inertia -->
         <inertia>
-          <ixx>26.1</ixx>
-          <iyy>26.1</iyy>
+          <ixx>0.0292</ixx>
+          <iyy>0.0292</iyy>
           <izz>0.00625</izz>
         </inertia>
       </inertial>
@@ -222,8 +222,8 @@
         <mass>50</mass>
         <!--  ******************inertia -->
         <inertia>
-          <ixx>26.1</ixx>
-          <iyy>26.1</iyy>
+          <ixx>0.0292</ixx>
+          <iyy>0.0292</iyy>
           <izz>0.00625</izz>
         </inertia>
       </inertial>
@@ -246,6 +246,116 @@
         </geometry>
       </visual>
     </link>
+
+    <!-- Joint 0: link0 - link1 -->
+    <joint name="joint0" type="revolute">
+      <parent>link0</parent>
+      <child>link1</child>
+      <pose>0 0 -0.125 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+
+      <initial_position>2</initial_position>
+    </joint>
+
+    <!-- Joint 1: link1 - link2 -->
+    <joint name="joint1" type="revolute">
+      <parent>link1</parent>
+      <child>link2</child>
+      <pose>0 0 -1.25 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <!-- Joint 2: link2 - link3 -->
+    <joint name="joint2" type="revolute">
+      <parent>link2</parent>
+      <child>link3</child>
+      <pose>0 0 -1.25 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <!-- Joint 3: link3 - link4 -->
+    <joint name="joint3" type="revolute">
+      <parent>link3</parent>
+      <child>link4</child>
+      <pose>0 0 -0.25 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <!-- Joint 4: link4 - link5 -->
+    <joint name="joint4" type="revolute">
+      <parent>link4</parent>
+      <child>link5</child>
+      <pose>0 0 -0.125 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <!-- Joint 5: link5 - link6 -->
+    <joint name="joint5" type="revolute">
+      <parent>link5</parent>
+      <child>link6</child>
+      <pose>0 0 -0.125 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <plugin
+      filename="gz-sim-joint-controller-system"
+      name="gz::sim::systems::JointController">
+      <joint_name>joint0</joint_name>
+      <topic>/floating_manipulator/joint0</topic>
+      <!--<initial_velocity>1.0</initial_velocity>-->
+    </plugin>
+
+    <plugin
+      filename="gz-sim-joint-controller-system"
+      name="gz::sim::systems::JointController">
+      <joint_name>joint1</joint_name>
+      <topic>/floating_manipulator/joint1</topic>
+      <!--<initial_velocity>1.0</initial_velocity>-->
+    </plugin>
+
+    <plugin
+      filename="gz-sim-joint-controller-system"
+      name="gz::sim::systems::JointController">
+      <joint_name>joint2</joint_name>
+      <topic>/floating_manipulator/joint2</topic>
+      <!--<initial_velocity>1.0</initial_velocity>-->
+    </plugin>
+
+    <plugin
+      filename="gz-sim-joint-controller-system"
+      name="gz::sim::systems::JointController">
+      <joint_name>joint3</joint_name>
+      <topic>/floating_manipulator/joint3</topic>
+      <!--<initial_velocity>1.0</initial_velocity>-->
+    </plugin>
+
+    <plugin
+      filename="gz-sim-joint-controller-system"
+      name="gz::sim::systems::JointController">
+      <joint_name>joint4</joint_name>
+      <topic>/floating_manipulator/joint4</topic>
+      <!--<initial_velocity>1.0</initial_velocity>-->
+    </plugin>
+
+    <plugin
+      filename="gz-sim-joint-controller-system"
+      name="gz::sim::systems::JointController">
+      <joint_name>joint5</joint_name>
+      <topic>/floating_manipulator/joint5</topic>
+      <!--<initial_velocity>1.0</initial_velocity>-->
+    </plugin>
 
   </model>
 </sdf>

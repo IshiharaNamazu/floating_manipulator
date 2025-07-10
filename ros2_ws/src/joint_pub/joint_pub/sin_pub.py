@@ -23,8 +23,8 @@ class SineWavePublisher(Node):
         publish_rate1 = self.get_parameter('publish_rate1').get_parameter_value().double_value
 
         # パブリッシャーの作成
-        self.publisher0_ = self.create_publisher(Float64, '/sat_model/joint0', 10)
-        self.publisher1_ = self.create_publisher(Float64, '/sat_model/joint1', 10)
+        self.publisher0_ = self.create_publisher(Float64, '/floating_manipulator/joint2', 10)
+        self.publisher1_ = self.create_publisher(Float64, '/floating_manipulator/joint3', 10)
 
         # パブリッシュ周期に応じたタイマーの作成
         self.timer0_ = self.create_timer(1.0 / publish_rate0, self.timer0_callback)

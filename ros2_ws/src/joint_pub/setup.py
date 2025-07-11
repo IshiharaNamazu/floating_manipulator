@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'sine_pub = joint_pub.sin_pub:main',
+            'play_trajectory = joint_pub.play_trajectory:main',
         ],
     },
 )

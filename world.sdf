@@ -22,7 +22,7 @@
     <light
       type="directional" name="sun">
       <cast_shadows>true</cast_shadows>
-      <pose>0 0 10 0 0 0</pose>
+      <pose>0 0 100 0 0 0</pose>
       <diffuse>0.8 0.8 0.8 1</diffuse>
       <specular>0.2 0.2 0.2 1</specular>
       <attenuation>
@@ -62,6 +62,7 @@
 
     <gravity>0 0 0</gravity>
     <physics name="default_physics" type="ode">
+      <max_step_size>0.001</max_step_size>
     </physics>
 
     <scene>
@@ -74,7 +75,7 @@
 
     <include>
       <uri>file://floating_manipulator.xml</uri>
-      <pose>0 5 3 0 0 0</pose>
+      <pose>0 0 10 0 0 0</pose>
     </include>
     <!--
     <include>

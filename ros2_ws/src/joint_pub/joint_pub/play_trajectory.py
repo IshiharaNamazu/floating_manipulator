@@ -18,7 +18,7 @@ class PlayTrajectory(Node):
             pub = self.create_publisher(Float64, topic, 10)
             self.joint_publishers_.append(pub)
         self.timer_ = self.create_timer(
-            0.010, self.publish_joint_velocity_linear
+            0.001, self.publish_joint_velocity_linear
         )  # 20Hz
         self.pre_log_time_ = self.get_clock().now()
 

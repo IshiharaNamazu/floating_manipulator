@@ -10,9 +10,6 @@ class PlayTrajectory(Node):
         super().__init__("play_trajectory")
         self.joint_publishers_ = []
         self.via_index_ = 0
-        self.via_end_time_ = self.get_clock().now() + rclpy.duration.Duration(
-            seconds=arm_via[0][0]
-        )
         for i in range(6):
             topic = f"/floating_manipulator/joint{i}"
             pub = self.create_publisher(Float64, topic, 10)
@@ -21,6 +18,7 @@ class PlayTrajectory(Node):
             0.001, self.publish_joint_velocity_linear
         )  # 20Hz
         self.pre_log_time_ = self.get_clock().now()
+        self.via_start_time_ = self.get_clock().now()
 
     def info_throttle(self, info_str, throttle_duration_sec=1.0):
         if (
@@ -32,16 +30,21 @@ class PlayTrajectory(Node):
 
     def publish_joint_velocity_linear(self):
         # viaの時間が経過したら次のviaへ
-        if self.via_end_time_ <= self.get_clock().now():
-            if self.via_index_ >= len(arm_via) - 1:  # 最後のviaに到達した場合終了
+        if self.via_index_ >= len(arm_via) - 1:  # 最後のviaに到達した場合終了
+            if self.get_clock().now() >= self.via_start_time_ + rclpy.duration.Duration(
+                seconds=arm_via[-1][0]
+            ):
                 self.via_index_ = len(arm_via)
                 self.info_throttle("end of trajectory")
-            else:
-                self.via_index_ += 1
-                self.get_logger().info("next_via_index:" + str(self.via_index_))
-                self.via_end_time_ += rclpy.duration.Duration(
+        else:
+            if self.get_clock().now() >= self.via_start_time_ + rclpy.duration.Duration(
+                seconds=arm_via[self.via_index_][0]
+            ):
+                self.via_start_time_ += rclpy.duration.Duration(
                     seconds=arm_via[self.via_index_][0]
                 )
+                self.via_index_ += 1
+                self.get_logger().info("next_via_index:" + str(self.via_index_))
 
         msgs = []
         if (self.via_index_ == 0) or (self.via_index_ >= len(arm_via)):

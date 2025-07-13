@@ -51,7 +51,7 @@
         <geometry>
           <!--  ******************col size -->
           <cylinder>
-            <radius>0.1</radius>
+            <radius>0.2</radius>
             <length>0.25</length>
           </cylinder>
         </geometry>
@@ -60,7 +60,7 @@
         <geometry>
           <!--  ******************vis size-->
           <cylinder>
-            <radius>0.1</radius>
+            <radius>0.2</radius>
             <length>0.25</length>
           </cylinder>
         </geometry>
@@ -87,7 +87,7 @@
         <geometry>
           <!--  ******************col size -->
           <cylinder>
-            <radius>0.1</radius>
+            <radius>0.2</radius>
             <length>2.5</length>
           </cylinder>
         </geometry>
@@ -96,7 +96,7 @@
         <geometry>
           <!--  ******************vis size-->
           <cylinder>
-            <radius>0.1</radius>
+            <radius>0.2</radius>
             <length>2.5</length>
           </cylinder>
         </geometry>
@@ -123,7 +123,7 @@
         <geometry>
           <!--  ******************col size -->
           <cylinder>
-            <radius>0.1</radius>
+            <radius>0.2</radius>
             <length>2.5</length>
           </cylinder>
         </geometry>
@@ -132,7 +132,7 @@
         <geometry>
           <!--  ******************vis size-->
           <cylinder>
-            <radius>0.1</radius>
+            <radius>0.2</radius>
             <length>2.5</length>
           </cylinder>
         </geometry>
@@ -159,7 +159,7 @@
         <geometry>
           <!--  ******************col size -->
           <cylinder>
-            <radius>0.1</radius>
+            <radius>0.2</radius>
             <length>0.5</length>
           </cylinder>
         </geometry>
@@ -168,7 +168,7 @@
         <geometry>
           <!--  ******************vis size-->
           <cylinder>
-            <radius>0.1</radius>
+            <radius>0.2</radius>
             <length>0.5</length>
           </cylinder>
         </geometry>
@@ -195,7 +195,7 @@
         <geometry>
           <!--  ******************col size -->
           <cylinder>
-            <radius>0.1</radius>
+            <radius>0.2</radius>
             <length>0.25</length>
           </cylinder>
         </geometry>
@@ -204,7 +204,7 @@
         <geometry>
           <!--  ******************vis size-->
           <cylinder>
-            <radius>0.1</radius>
+            <radius>0.2</radius>
             <length>0.25</length>
           </cylinder>
         </geometry>
@@ -231,7 +231,7 @@
         <geometry>
           <!--  ******************col size -->
           <cylinder>
-            <radius>0.1</radius>
+            <radius>0.2</radius>
             <length>0.25</length>
           </cylinder>
         </geometry>
@@ -240,7 +240,7 @@
         <geometry>
           <!--  ******************vis size-->
           <cylinder>
-            <radius>0.1</radius>
+            <radius>0.2</radius>
             <length>0.25</length>
           </cylinder>
         </geometry>

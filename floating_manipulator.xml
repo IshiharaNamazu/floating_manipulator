@@ -25,6 +25,11 @@
         </geometry>
       </collision>
       <visual name="visual">
+        <material>
+          <ambient>0.03 0.03 0.04 1</ambient>
+          <diffuse>0.15 0.15 0.2 1</diffuse>
+          <specular>1.0 1.0 1.0 1</specular>
+        </material>
         <geometry>
           <box>
             <size>3.5 3.5 3.5</size>
@@ -57,11 +62,44 @@
         </geometry>
       </collision>
       <visual name="visual">
+        <material>
+          <ambient>0.03 0.03 0.04 1</ambient>
+          <diffuse>0.15 0.15 0.2 1</diffuse>
+          <specular>1.0 1.0 1.0 1</specular>
+        </material>
         <geometry>
           <!--  ******************vis size-->
           <cylinder>
             <radius>0.2</radius>
             <length>0.25</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name="motor">
+        <material>
+          <ambient>0.03 0.03 0.04 1</ambient>
+          <diffuse>0.15 0.15 0.2 1</diffuse>
+          <specular>1.0 1.0 1.0 1</specular>
+        </material>
+        <pose>0 0 0.125 1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.4</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name="zmotor">
+        <material>
+          <ambient>0.03 0.03 0.04 1</ambient>
+          <diffuse>0.15 0.15 0.2 1</diffuse>
+          <specular>1.0 1.0 1.0 1</specular>
+        </material>
+        <pose>0 0 -0.1 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3</radius>
+            <length>0.05</length>
           </cylinder>
         </geometry>
       </visual>
@@ -93,11 +131,30 @@
         </geometry>
       </collision>
       <visual name="visual">
+        <material>
+          <ambient>0.03 0.03 0.04 1</ambient>
+          <diffuse>0.15 0.15 0.2 1</diffuse>
+          <specular>1.0 1.0 1.0 1</specular>
+        </material>
         <geometry>
           <!--  ******************vis size-->
           <cylinder>
             <radius>0.2</radius>
             <length>2.5</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name="motor">
+        <material>
+          <ambient>0.03 0.03 0.04 1</ambient>
+          <diffuse>0.15 0.15 0.2 1</diffuse>
+          <specular>1.0 1.0 1.0 1</specular>
+        </material>
+        <pose>0 0 1.25 1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.4</length>
           </cylinder>
         </geometry>
       </visual>
@@ -129,11 +186,30 @@
         </geometry>
       </collision>
       <visual name="visual">
+        <material>
+          <ambient>0.03 0.03 0.04 1</ambient>
+          <diffuse>0.15 0.15 0.2 1</diffuse>
+          <specular>1.0 1.0 1.0 1</specular>
+        </material>
         <geometry>
           <!--  ******************vis size-->
           <cylinder>
             <radius>0.2</radius>
             <length>2.5</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name="motor">
+        <material>
+          <ambient>0.03 0.03 0.04 1</ambient>
+          <diffuse>0.15 0.15 0.2 1</diffuse>
+          <specular>1.0 1.0 1.0 1</specular>
+        </material>
+        <pose>0 0 1.25 1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.4</length>
           </cylinder>
         </geometry>
       </visual>
@@ -165,11 +241,35 @@
         </geometry>
       </collision>
       <visual name="visual">
+        <material>
+          <ambient>0.03 0.03 0.04 1</ambient>
+          <diffuse>0.15 0.15 0.2 1</diffuse>
+          <specular>1.0 1.0 1.0 1</specular>
+        </material>
         <geometry>
           <!--  ******************vis size-->
+          <material>
+            <ambient>0.03 0.03 0.04 1</ambient>
+            <diffuse>0.15 0.15 0.2 1</diffuse>
+            <specular>1.0 1.0 1.0 1</specular>
+          </material>
           <cylinder>
             <radius>0.2</radius>
             <length>0.5</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name="motor">
+        <material>
+          <ambient>0.03 0.03 0.04 1</ambient>
+          <diffuse>0.15 0.15 0.2 1</diffuse>
+          <specular>1.0 1.0 1.0 1</specular>
+        </material>
+        <pose>0 0 0.25 0 1.5707 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.4</length>
           </cylinder>
         </geometry>
       </visual>
@@ -201,11 +301,30 @@
         </geometry>
       </collision>
       <visual name="visual">
+        <material>
+          <ambient>0.03 0.03 0.04 1</ambient>
+          <diffuse>0.15 0.15 0.2 1</diffuse>
+          <specular>1.0 1.0 1.0 1</specular>
+        </material>
         <geometry>
           <!--  ******************vis size-->
           <cylinder>
             <radius>0.2</radius>
             <length>0.25</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name="zmotor">
+        <material>
+          <ambient>0.03 0.03 0.04 1</ambient>
+          <diffuse>0.15 0.15 0.2 1</diffuse>
+          <specular>1.0 1.0 1.0 1</specular>
+        </material>
+        <pose>0 0 0.125 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.05</length>
           </cylinder>
         </geometry>
       </visual>
@@ -228,21 +347,58 @@
         </inertia>
       </inertial>
       <collision name="collision">
-        <geometry>
-          <!--  ******************col size -->
-          <cylinder>
-            <radius>0.2</radius>
-            <length>0.25</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="visual">
+        <pose>0 0 -0.10 0 0 0</pose>
         <geometry>
           <!--  ******************vis size-->
-          <cylinder>
-            <radius>0.2</radius>
-            <length>0.25</length>
-          </cylinder>
+          <box>
+            <size>0.6 0.2 0.25
+            </size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="base">
+        <material>
+          <ambient>0.03 0.03 0.04 1</ambient>
+          <diffuse>0.15 0.15 0.2 1</diffuse>
+          <specular>1.0 1.0 1.0 1</specular>
+        </material>
+        <pose>0 0 -0.10 0 0 0</pose>
+        <geometry>
+          <!--  ******************vis size-->
+          <box>
+            <size>0.6 0.2 0.05
+            </size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="hand1">
+        <material>
+          <ambient>0.03 0.03 0.04 1</ambient>
+          <diffuse>0.15 0.15 0.2 1</diffuse>
+          <specular>1.0 1.0 1.0 1</specular>
+        </material>
+        <pose>-0.3 0 0.05 0 0 0</pose>
+        <geometry>
+          <!--  ******************vis size-->
+          <box>
+            <size>0.05 0.2 0.4
+            </size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name="hand2">
+        <material>
+          <ambient>0.03 0.03 0.04 1</ambient>
+          <diffuse>0.15 0.15 0.2 1</diffuse>
+          <specular>1.0 1.0 1.0 1</specular>
+        </material>
+        <pose>0.3 0 0.05 0 0 0</pose>
+        <geometry>
+          <!--  ******************vis size-->
+          <box>
+            <size>0.05 0.2 0.4
+            </size>
+          </box>
         </geometry>
       </visual>
     </link>

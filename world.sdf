@@ -21,7 +21,7 @@
 
     <light name="front_directional" type="directional">
       <pose>0 0 2 0 0 0</pose> <!-- 少し上空に配置 -->
-      <direction>-1 -1 -5</direction> <!-- 下向き -->
+      <direction>-1 -1 -2</direction> <!-- 下向き -->
       <diffuse>1 1 1 1</diffuse>
       <specular>0.1 0.1 0.1 1</specular>
       <cast_shadows>true</cast_shadows>
@@ -32,27 +32,67 @@
       <pose>0 0 1 0 0 0</pose>
       <static>true</static>
       <link name="link">
-        <collision name="collision">
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-            </plane>
-          </geometry>
-        </collision>
         <visual name="visual">
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>1000 1000</size>
+              <size>10000 10000</size>
             </plane>
           </geometry>
           <material>
-            <ambient>0.8 0.8 0.8 1</ambient>
-            <diffuse>0.8 0.8 0.8 1</diffuse>
-            <specular>0.8 0.8 0.8 1</specular>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <emissive>0.8 0.8 0.8 1</emissive>
           </material>
+          <cast_shadows>false</cast_shadows>
         </visual>
-        <cast_shadows>false</cast_shadows>
+      </link>
+    </model>
+
+    <model name="vertical_planey">
+      <pose>0 200 0 1.5708 0 0</pose>
+      <pose>0 0 1 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>10000 10000</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <emissive>0.8 0.8 0.8 1</emissive>
+          </material>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+      </link>
+    </model>
+
+    <model name="vertical_planex">
+      <pose>-200 0 0 0 1.5708 0</pose>
+      <pose>0 0 1 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>10000 10000</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <emissive>0.8 0.8 0.8 1</emissive>
+          </material>
+          <cast_shadows>false</cast_shadows>
+        </visual>
       </link>
     </model>
 
@@ -71,12 +111,12 @@
 
     <include>
       <uri>file://floating_manipulator.xml</uri>
-      <pose>0 0 11 0 -0.0990 0</pose>
+      <pose>0 0 11 0 -0.1268 0</pose>
     </include>
 
     <model name="box_object">
-      <pose>-1.1990333683141545, -1.0196662233618718, 16.879911768849308, 1.537042091327021,
-        -0.05597566138488763, -1.5169557508306544</pose>
+      <pose>-0.9891624945971413, -1.1142040458959903, 16.753627431797597, 1.678770345528971,
+        0.4504928907339054, -1.077027986859761</pose>
       <static>false</static>
       <link name="box_link">
         <collision name="box_collision">
@@ -100,7 +140,6 @@
         </visual>
       </link>
     </model>
-
 
   </world>
 </sdf>

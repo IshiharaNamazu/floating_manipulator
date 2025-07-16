@@ -33,12 +33,12 @@ def transform_to_world(x_b, rpy_b, x_e, rpy_e, box_pos):
 
 # --- 使用例 ---
 # Baseフレーム（原点から見たロボットの位置・姿勢）
-x_b = np.array([-0.0074, 0.0004, 11.0968])  # [m]
-rpy_b = [-0.0677, -0.0647, 0.1176]  # RPY
+x_b = np.array([-0.0155, -0.0294, 11.3085])  # [m]
+rpy_b = [-0.1617, -0.0606, 0.5914]  # RPY
 
 # Baseから見た先端の位置と姿勢
-x_e = np.array([-0.6782, -1.2820, 5.7572])  # Baseから見た位置 [m]
-rpy_e = [1.4683, 0.0076, -1.6307]  # RPY
+x_e = np.array([-0.8335, -1.2788, 5.3945])  # Baseから見た位置 [m]
+rpy_e = [1.5873, 0.6040, -1.7097]  # RPY
 
 box_pos = [0, 0, 0.25]  # アームの先端向きのboxの位置
 
@@ -60,4 +60,12 @@ print(
     + str(rpy_world[1])
     + ", "
     + str(rpy_world[2])
+)
+
+rpy_g = (
+    R.from_euler("xyz", [-90, 0, 0], degrees=True)
+    * R.from_euler("xyz", [0, 0, 45], degrees=True)
+).as_euler("xyz", degrees=False)
+print(
+    "ground plane pose:" + str(rpy_g[0]) + ", " + str(rpy_g[1]) + ", " + str(rpy_g[2])
 )

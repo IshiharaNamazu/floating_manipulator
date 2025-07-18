@@ -15,9 +15,16 @@ class PlayTrajectory(Node):
             topic = f"/floating_manipulator/joint{i}"
             pub = self.create_publisher(Float64, topic, 10)
             self.joint_publishers_.append(pub)
+        self.wait_for_sim_time()
         self.timer_ = self.create_timer(0.001, self.publish_joint_velocity_sin)  # 20Hz
         self.pre_log_time_ = self.get_clock().now()
         self.via_start_time_ = self.get_clock().now()
+
+    def wait_for_sim_time(self):
+        self.get_logger().info("Waiting for /clock...")
+        while rclpy.ok() and self.get_clock().now().nanoseconds == 0:
+            rclpy.spin_once(self, timeout_sec=0.1)
+        self.get_logger().info("Sim time received.")
 
     def info_throttle(self, info_str, throttle_duration_sec=1.0):
         if (

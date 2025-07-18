@@ -7,6 +7,14 @@ node_list = [
         executable="sin_pub",
         name="sin_pub",
         output="screen",
+        parameters=[{"use_sim_time": True}],
+    ),
+    Node(
+        package="ros_gz_bridge",
+        executable="parameter_bridge",
+        name="bridge_clock",
+        arguments=["/clock@rosgraph_msgs/msg/Clock@gz.msgs.Clock"],
+        output="screen",
     ),
 ]
 

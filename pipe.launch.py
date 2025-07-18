@@ -7,6 +7,14 @@ node_list = [
         executable="play_trajectory",
         name="play_trajectory",
         output="screen",
+        parameters=[{"use_sim_time": True}],
+    ),
+    Node(
+        package="ros_gz_bridge",
+        executable="parameter_bridge",
+        name="bridge_clock",
+        arguments=["/clock@rosgraph_msgs/msg/Clock@gz.msgs.Clock"],
+        output="screen",
     ),
 ]
 

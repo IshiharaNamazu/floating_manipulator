@@ -346,12 +346,32 @@
           <izz>0.00625</izz>
         </inertia>
       </inertial>
-      <collision name="collision">
+      <collision name="collision_base">
         <pose>0 0 -0.10 0 0 0</pose>
         <geometry>
           <!--  ******************vis size-->
           <box>
-            <size>0.6 0.2 0.25
+            <size>0.6 0.2 0.05
+            </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col_hand1">
+        <pose>-0.3 0 0.05 0 0 0</pose>
+        <geometry>
+          <!--  ******************vis size-->
+          <box>
+            <size>0.05 0.2 0.4
+            </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col_hand2">
+        <pose>0.3 0 0.05 0 0 0</pose>
+        <geometry>
+          <!--  ******************vis size-->
+          <box>
+            <size>0.05 0.2 0.4
             </size>
           </box>
         </geometry>

@@ -33,14 +33,14 @@ def transform_to_world(x_b, rpy_b, x_e, rpy_e, box_pos):
 
 # --- 使用例 ---
 # Baseフレーム（原点から見たロボットの位置・姿勢）
-x_b = np.array([-0.0155, -0.0294, 11.3085])  # [m]
-rpy_b = [-0.1617, -0.0606, 0.5914]  # RPY
+x_b = np.array([-0.0048, 0.0243, 11.3006])  # [m]
+rpy_b = [-0.1143, -0.0989, 0.5063]  # RPY
 
 # Baseから見た先端の位置と姿勢
-x_e = np.array([-0.8335, -1.2788, 5.3945])  # Baseから見た位置 [m]
-rpy_e = [1.5873, 0.6040, -1.7097]  # RPY
+x_e = np.array([-0.8058, -1.3003, 5.4381])  # Baseから見た位置 [m]
+rpy_e = [1.5839, 0.5964, -1.6757]  # RPY
 
-box_pos = [0, 0, 0.25]  # アームの先端向きのboxの位置
+box_pos = [0, 0, 0.20]  # アームの先端向きのboxの位置
 
 # 計算
 x_world, rpy_world = transform_to_world(x_b, rpy_b, x_e, rpy_e, box_pos)
